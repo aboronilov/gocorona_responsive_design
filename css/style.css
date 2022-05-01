@@ -1,80 +1,47 @@
-/* Указываем box sizing */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+a simpler reset
+http://www.maxdesign.com.au/articles/css-reset/
+*/
+html, body, ul, ol, li, form, fieldset, legend
+{
+	margin: 0;
+	padding: 0;
 }
-
-/* Убираем внутренние отступы */
-ul[class],
-ol[class] {
-  padding: 0;
+ 
+h1, h2, h3, h4, h5, h6, p { margin-top: 0; }
+ 
+fieldset,img { border: 0; }
+ 
+legend { color: #000; }
+ 
+li { list-style: none; }
+ 
+sup { vertical-align: text-top; }
+ 
+sub { vertical-align: text-bottom; }
+ 
+table
+{
+	border-collapse: collapse;
+	border-spacing: 0;
 }
-
-/* Убираем внешние отступы */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-ul[class],
-ol[class],
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-  margin: 0;
+ 
+caption, th, td
+{
+	text-align: left;
+	vertical-align: top;
+	font-weight: normal;
 }
-
-/* Выставляем основные настройки по-умолчанию для body */
-body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+ 
+input, textarea, select
+{
+	font-size: 110%;
+	line-height: 1.1;
 }
-
-/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
-ul[class],
-ol[class] {
-  list-style: none;
-}
-
-/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Упрощаем работу с изображениями */
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* Указываем понятную периодичность в потоке данных у article*/
-article > * + * {
-  margin-top: 1em;
-}
-
-/* Наследуем шрифты для инпутов и кнопок */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+ 
+abbr, acronym
+{
+	border-bottom: .1em dotted;
+	cursor: help;
 }
 
 /* ------------------------------- */
@@ -84,3 +51,21 @@ body{
     font-size: 12px;
     color: #616161;
 }
+
+.wrapper{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+[class*="__container"] {
+    max-width: 1057px;
+    margin: 0px auto;
+}
+
+/* прибить footer к низу */
+.main {
+    flex: 1 1 auto;
+}
+
